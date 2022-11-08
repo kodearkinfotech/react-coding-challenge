@@ -3,6 +3,7 @@
 > Welcome to the KodeArk Infotech Coding Challenge!
 
 # Pre-Requisite
+
 - TypeScript
 - Next.JS
 - React
@@ -87,6 +88,7 @@ You will also need to handle the loading and error states of fetching the JSON f
 ## FAQ
 
 ### What language, framework, build tool... should I use?
+
 - You may use whatever you like as long as the solution is built using [React](https://facebook.github.io/react/) or an equivalent library.
 - **TypeScript must be used instead of ES6.**
 - Next.JS is preferable.
@@ -95,10 +97,48 @@ You will also need to handle the loading and error states of fetching the JSON f
 * We also prefer the use of minimal dependencies
 
 ## Useful Links
+
 - [GitHub](https://github.com/kodearkinfotech/react-coding-challenge)
 - [Google Fonts - Raleway](https://fonts.google.com/?selection.family=Raleway)
 - [React](https://facebook.github.io/react/)
 
 ## How to Send the Code?
- - Fork this repo https://github.com/kodearkinfotech/react-coding-challenge
- - Create a PR against `main` with your changes.
+
+- Fork this repo https://github.com/kodearkinfotech/react-coding-challenge
+- Create a PR against `main` with your changes.
+
+# Completed
+
+[DEMO URL](https://react-coding-challenge-4nu4fp7ck-saratonite.vercel.app/)
+
+Used libraries
+
+- next.js
+- tailwindcss for styling
+- axios for http request
+- `pages/api/feed` as api end point
+
+## SETUP
+
+Use pnpm or npm to install dependency
+
+```bash
+
+pnpm install
+
+```
+
+### Run Development
+
+```bash
+pnpm dev
+```
+
+### Build and start
+
+```bash
+pnpm build
+
+pnpm start
+
+```
