@@ -1,20 +1,26 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
+import { ButtonLink } from "~/components/Button";
 
 type LayoutProps = {
   title?: string;
-  pageName?: string;
   children?: React.ReactNode;
 };
-export function Layout({ title, pageName = "Page", children }: LayoutProps) {
+export function Layout({ title, children }: LayoutProps) {
   return (
-    <div className="flex flex-col min-h-screen w-full ">
-      <Header pageName={pageName} />
-      <main className="flex-grow max-w-screen-lg mx-auto p-2 w-full ">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>{title ? `${title} :: ` : ""} DemoStream</title>
+      </Head>
+      <div className="flex flex-col min-h-screen w-full ">
+        <Header pageName={title} />
+        <main className="flex-grow max-w-screen-lg mx-auto p-2 w-full ">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }
 
@@ -29,9 +35,9 @@ function Header({ pageName = "" }: HeaderProps) {
           <h1 className="text-2xl font-bold">
             <Link href="/">Demo Streaming</Link>
           </h1>
-          <nav className=" space-x-4">
+          <nav className=" space-x-4 text-sm">
             <Link href="/login">Login</Link>
-            <a>Register</a>
+            <ButtonLink href="/">Start your free trial</ButtonLink>
           </nav>
         </div>
       </header>
@@ -75,21 +81,27 @@ function Footer() {
         {/* Social + App links */}
         <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 justify-between items-center">
           <div className=" flex space-x-4">
-            <img
-              className="h-6 w-6"
-              src="/assets/social/facebook-white.svg"
-              alt="Facebook"
-            />
-            <img
-              className="h-6 w-6"
-              src="/assets/social/twitter-white.svg"
-              alt="Twitter"
-            />
-            <img
-              className="h-6 w-6"
-              src="/assets/social/instagram-white.svg"
-              alt="Instagram"
-            />
+            <Link href="/">
+              <img
+                className="h-6 w-6"
+                src="/assets/social/facebook-white.svg"
+                alt="Facebook"
+              />
+            </Link>
+            <Link href="/">
+              <img
+                className="h-6 w-6"
+                src="/assets/social/twitter-white.svg"
+                alt="Twitter"
+              />
+            </Link>
+            <Link href="/">
+              <img
+                className="h-6 w-6"
+                src="/assets/social/instagram-white.svg"
+                alt="Instagram"
+              />
+            </Link>
           </div>
           <div className="flex space-x-3">
             <div className="w-32 h-10">
